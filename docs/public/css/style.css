@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('../fonts/BMDOHYEON.ttf') format('truetype');
+}
+
+* {
+    font-family: 'BMDOHYEON';
+}
+
+p {
+    font-family: 굴림;
+}
+td img{
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+
