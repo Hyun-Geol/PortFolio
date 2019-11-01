@@ -7,11 +7,19 @@
     font-family: 'BMDOHYEON';
 }
 
-p {
+.gulim {
     font-family: 굴림;
+    font-size: 12px;
+    margin-right: 10%;
 }
+
 td img{
     margin-right: 10%;
     margin-bottom: 5%;
+    margin-top: 5%;
 }
 
+.padding-td {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
