@@ -9,7 +9,8 @@
 
 .gulim {
     font-family: 굴림;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 100;
     margin-right: 10%;
 }
 
@@ -22,4 +23,8 @@ td img{
 .padding-td {
     padding-top: 5%;
     padding-bottom: 5%;
+}
+
+b {
+    font-size: 17px;
 }
