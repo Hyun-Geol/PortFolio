@@ -11,13 +11,14 @@
     font-family: 굴림;
     font-size: 14px;
     font-weight: 100;
-    margin-right: 10%;
+    margin: 0% 2.5%;
 }
 
 .iconimg{
     width: 57px;
     height: 57px;
     margin-right: 10%;
+    margin-left: 10%;
     margin-bottom: 5%;
     margin-top: 5%;
 }
