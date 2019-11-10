@@ -23,10 +23,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#About" id="about">About <span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="#Skills" id="skills">Skills</a>
-                    <a class="nav-link" href="#Project" id="project">Project</a>
-                    <a class="nav-link" href="#HomePage" id="homepage">HomePage</a>
+                    <a class="nav-link" href="#Profile" id="profile">PROFILE</a>
+                    <a class="nav-link" href="#About" id="about">ABOUT ME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#Skills" id="skills">SKILLS</a>
+                    <a class="nav-link" href="#Project1" id="project1">PROJECT-1(EtherWallet)</a>
+                    <a class="nav-link" href="#Project2" id="project2">PROJECT-2(Escan)</a>
+                    <a class="nav-link" href="#HomePage" id="homepage">HOMEPAGE</a>
                 </div>
             </div>
         </nav>
@@ -35,17 +37,32 @@
     <div class="container" id="Home" style="width: 100%; height: 100%; margin-top:56px;">
         <div class="row">
             <div class="col col-md col-lg col-xl" id="image-text">
-                <img src="public/images/Developer.jpg" style="width: 100%; height: 100%;" alt="Developer" ondragstart="return false">
-                <h1 class="text" onselectstart="return false">Developer 조현걸의 포트폴리오 입니다.</h1>
+                <img src="public/images/Developer.jpg" style="width: 100%; height: 100%;" alt="Developer"
+                    ondragstart="return false">
+                <p class="text" onselectstart="return false">Developer 조현걸의 포트폴리오 입니다.</p>
             </div>
         </div>
     </div>
     <div class="container" id="page">
         <div class="row">
             <table width="100%">
-                <tr id="About">
+                <tr id="Profile" style="background-color: #8F9FBF;">
                     <td align="center">
-                        <h3 onselectstart="return false">About Me</h3>
+                        <br><br>
+                        <h3 onselectstart="return false">ProFile</h3>
+                    </td>
+                    <td class="padding-td" align="center">
+                        <img src="public/images/조현걸.jpg" alt="본인 사진" style="border-radius: 50%; width:40%;"><br><br>
+                        <h4>CHO HYUN GEOL</h4>
+                        <h5 style="color: #d3d3d3">Junior Developer</h5><br>
+                        <h6>September 4, 1999</h6>
+                        <h6>Email: whgusrjf33@gamil.com</h6>
+
+                    </td>
+                </tr>
+                <tr id="About" style="background-color: #99AABF;">
+                    <td align="center">
+                        <h3 onselectstart="return false">ABOUT ME</h3>
                     </td>
                     <td class="padding-td">
                         <br><br>
@@ -57,33 +74,33 @@
                         </p><br>
                         <h4>목표</h4>
                         <p class="gulim">
-                            지금 제 목표는 기본적인 공부를 하면서 여러 사람들과 소통하고, 프로젝트를
+                            지금 제 목표는 기본적인 공부를 하면서 제 역량을 늘리면서 여러 사람들과 소통하고, 프로젝트를
                             진행해가며 개발실력을 늘려가는 것이 목표입니다.
                         </p>
                     </td>
                 </tr>
                 <tr id="Skills" style="background-color: #B4C4D9;">
                     <td align="center">
-                        <h3 onselectstart="return false">보유스킬</h3>
+                        <h3 onselectstart="return false">SKILLS</h3>
                     </td>
                     <td class="padding-td">
                         <img src="public/images/js.png" class="iconimg" style="border-radius:5px;" alt="js"
                             ondragstart="return false">
-                        <img src="public/images/nodejs.png" class="iconimg" style="border-radius:5px;"
-                            alt="nodejs" ondragstart="return false">
-                        <img src="public/images/web3js.PNG" class="iconimg" style="border-radius:5px;"
-                            alt="web3js" ondragstart="return false">
-                        <img src="public/images/HTML5.png" class="iconimg" style="border-radius:5px;"
-                            alt="HTML5" ondragstart="return false">
-                        <img src="public/images/MySQL.png" class="iconimg" style="border-radius:5px;"
-                            alt="MySql" ondragstart="return false">
+                        <img src="public/images/nodejs.png" class="iconimg" style="border-radius:5px;" alt="nodejs"
+                            ondragstart="return false">
+                        <img src="public/images/web3js.PNG" class="iconimg" style="border-radius:5px;" alt="web3js"
+                            ondragstart="return false">
+                        <img src="public/images/HTML5.png" class="iconimg" style="border-radius:5px;" alt="HTML5"
+                            ondragstart="return false">
+                        <img src="public/images/MySQL.png" class="iconimg" style="border-radius:5px;" alt="MySql"
+                            ondragstart="return false">
                     </td>
                 </tr>
-                <tr id="Project" style="background-color: #99AABF;">
+                <tr id="Project1" style="background-color: #E4EAF2;">
                     <td align="center">
-                        <h3 onselectstart="return false">프로젝트</h3>
+                        <h3 onselectstart="return false">PROJECT - 1<br>(EtherWallet)</h3>
                     </td>
-                    <td class="padding-td">
+                    <td class="padding-td"><br><br>
                         <div class="container">
                             <a href="https://github.com/Hyun-Geol/ethereumWallet" target="_blank">
                                 <img src="public/images/etherWallet.PNG" style="width:90%;" alt="ethwallet"
@@ -95,19 +112,19 @@
                                 <b>개발기간</b><br><br>
                                 2019.09.02 ~ 2019.11.05<br><br>
                                 <b>맡은역할</b><br><br>
-                                제가 맡은 역할은 이더리움 지갑을 만들기 위해 web3.js 라이브러리를 참조하여 계정생성을 할 때 PrivateKey, 
-                                PublicKey를 만들어 DB에 저장하는 기능(Password는 bcrypt, PrivateKey는 Crypto로 암호화하여 
-                                저장)을 만들었고, 이더전송하는 부분을 보다 안돼서 검색하여 TestNet과 MainNet은 web3의 
-                                Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 PrivateKey로 서명하여 이더를 전송하는 
-                                기능, 잔액을 조회하는 기능, 개인 키를 보여주는 기능, 로그인 부분 에러처리 및 다양한 에러 처리를 
-                                하는 등 기능적인 부분을 개발하는 백엔드 역할을 맡았습니다. 그리고 프로젝트가 마무리될 때쯤 template으로 
+                                제가 맡은 역할은 이더리움 지갑을 만들기 위해 web3.js 라이브러리를 참조하여 계정생성을 할 때 PrivateKey,
+                                PublicKey를 만들어 DB에 저장하는 기능(Password는 bcrypt, PrivateKey는 Crypto로 암호화하여
+                                저장)을 만들었고, 이더전송하는 부분을 보다 안돼서 검색하여 TestNet과 MainNet은 web3의
+                                Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 PrivateKey로 서명하여 이더를 전송하는
+                                기능, 잔액을 조회하는 기능, 개인 키를 보여주는 기능, 로그인 부분 에러처리 및 다양한 에러 처리를
+                                하는 등 기능적인 부분을 개발하는 백엔드 역할을 맡았습니다. 그리고 프로젝트가 마무리될 때쯤 template으로
                                 작성되어있던 웹페이지를 ejs 템플릿 엔진 사용하여 코드를 정리하며 변환하는 작업을 하면서 프로젝트는 마무리되었습니다.<br><br>
                                 <b>느낀점</b><br><br>
-                                처음으로 프로젝트를 진행하면서 어떻게 문제를 해결해야할지 막막했던적이 많았는데 처음에는 문제가 생기면 
-                                해결하는데 많은 시간이 걸렸는데 시간이 갈수록 문제가 생겼을 때 구글에 검색하는 방식이나 문제 해결에 대한 
-                                숙련도가 생기면서 문제가 발생했을 때 어떻게 하면 해결이 될지 아는데 점점 더 적은 시간이 들게 되었습니다. 
-                                문제가 생길 때마다 정말 힘들었지만 팀원들과 문제에 대한 의견을 주고받으며 해결책을 찾기도 하였습니다. 
-                                그리고 문제를 하나하나 해결하거나 원하는 기능이 구현되었을 때 그 성취감은 말로 이루 표현할 수 없었던 것 같습니다. 
+                                처음으로 프로젝트를 진행하면서 어떻게 문제를 해결해야할지 막막했던적이 많았는데 처음에는 문제가 생기면
+                                해결하는데 많은 시간이 걸렸는데 시간이 갈수록 문제가 생겼을 때 구글에 검색하는 방식이나 문제 해결에 대한
+                                숙련도가 생기면서 문제가 발생했을 때 어떻게 하면 해결이 될지 아는데 점점 더 적은 시간이 들게 되었습니다.
+                                문제가 생길 때마다 정말 힘들었지만 팀원들과 문제에 대한 의견을 주고받으며 해결책을 찾기도 하였습니다.
+                                그리고 문제를 하나하나 해결하거나 원하는 기능이 구현되었을 때 그 성취감은 말로 이루 표현할 수 없었던 것 같습니다.
                                 앞으로도 전 그 성취감을 위해 개발 공부를 계속할 것 같습니다.
                                 <br>
                                 <a href="https://github.com/Hyun-Geol/ethereumWallet" target="_blank">
@@ -115,32 +132,39 @@
                                 </a>
                             </p>
                         </div>
-                        <div class="container">
-                            <a href="https://github.com/pilsa0327/etherscan" target="_blank">
-                                <img src="public/images/ethscan.PNG" style="width:90%;" alt="ethscan"
-                                    title="이미지를 클릭하시면 github페이지로 이동됩니다."
-                                    style="margin-bottom: 0%; border: 1px solid black;" ondragstart="return false">
-                            </a>
-                            <p class="gulim"
-                                style="background-color: white; padding: 1em; border: 2px solid white; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-                                <b>개발기간</b><br><br>
-                                2019.09.19 ~ 2019.10.31<br><br>
-                                <b>맡은역할</b><br><br>
-                                Etherscan의 기능적인 부분을 만들어 보자는 의견이 나와 시작하게 된 프로젝트입니다.
-                                제가 맡은 역할은 블록 번호, 트랜잭션 해시, 어드레스를 검색 했을 때 검색한 결과에 맞는 정보가 나오도록
-                                기능을 만드는 작업, 만약에 존재하지 않는 값을 입력할 경우 그 값을 검사하는 web3.js의 함수를 사용하여
-                                검사한 후 없는 것을 검색했을 때 에러처리와 ejs 웹과 서버가 연결되도록 하는 작업을 하였습니다.
-                                <br>
-                                <a href="https://github.com/pilsa0327/etherscan" target="_blank">
-                                    <img src="public/images/github.png" class="iconimg" alt="github">
-                                </a>
-                            </p>
-                        </div>
                     </td>
                 </tr>
-                <tr id="HomePage">
+                <tr id="Project2" style="background-color: #E4EAF2;">
                     <td align="center">
-                        <h3 onselectstart="return false">개인 홈페이지</h3>
+                        <h3 onselectstart="return false">PROJECT - 2<br>(Escan)</h3>
+                    </td>
+                    <td class="padding-td"><br><br>
+                        <div class="container">
+                                <a href="https://github.com/pilsa0327/etherscan" target="_blank">
+                                    <img src="public/images/ethscan.PNG" style="width:90%;" alt="ethscan"
+                                        title="이미지를 클릭하시면 github페이지로 이동됩니다."
+                                        style="margin-bottom: 0%; border: 1px solid black;" ondragstart="return false">
+                                </a>
+                                <p class="gulim"
+                                    style="background-color: white; padding: 1em; border: 2px solid white; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+                                    <b>개발기간</b><br><br>
+                                    2019.09.19 ~ 2019.10.31<br><br>
+                                    <b>맡은역할</b><br><br>
+                                    Etherscan의 기능적인 부분을 만들어 보자는 의견이 나와 시작하게 된 프로젝트입니다.
+                                    제가 맡은 역할은 블록 번호, 트랜잭션 해시, 어드레스를 검색 했을 때 검색한 결과에 맞는 정보가 나오도록
+                                    기능을 만드는 작업, 만약에 존재하지 않는 값을 입력할 경우 그 값을 검사하는 web3.js의 함수를 사용하여
+                                    검사한 후 없는 것을 검색했을 때 에러처리와 ejs 웹과 서버가 연결되도록 하는 작업을 하였습니다.
+                                    <br>
+                                    <a href="https://github.com/pilsa0327/etherscan" target="_blank">
+                                        <img src="public/images/github.png" class="iconimg" alt="github">
+                                    </a>
+                                </p>
+                            </div>
+                    </td>
+                </tr>
+                <tr id="HomePage" style="background-color: #6C7D8C;">
+                    <td align="center">
+                        <h3 onselectstart="return false">HOME PAGE</h3>
                     </td>
                     <td class="padding-td">
                         <div class="container">

@@ -38,6 +38,7 @@ b {
 
 #image-text { 
     position: relative;
+    padding:0px;
 }
 
 .text {
@@ -47,4 +48,15 @@ b {
     left: 50%;
     transform: translate( -50%, -50% );
     color: white;
+    font-size: 35px;
+}
+
+.image-image {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 25%;
+    transform: translate( -100%, -50% );
+    color: white;
+    font-size: 35px;
 }
