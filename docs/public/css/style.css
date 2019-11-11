@@ -10,17 +10,23 @@
 .gulim {
     font-family: 굴림;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 600;
     margin: 0% 2.5%;
+    background-color: white;
+    padding: 1em;
+    border: 2px solid white;
+    border-bottom-right-radius: 5px; 
+    border-bottom-left-radius: 5px;
 }
 
 .iconimg{
     width: 57px;
     height: 57px;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
     margin-bottom: 5%;
     margin-top: 5%;
+    border-radius:5px;
 }
 
 .padding-td {
@@ -29,12 +35,13 @@
     width: 70%;
 }
 
-b {
-    font-size: 17px;
-}
-
 .hide {
     display: none;
+}
+
+strong {
+    color: #302b63;
+    font-size: 20px;
 }
 
 #image-text { 
@@ -49,7 +56,7 @@ b {
     left: 50%;
     transform: translate( -50%, -50% );
     color: white;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .image-image {
@@ -60,4 +67,9 @@ b {
     transform: translate( -100%, -50% );
     color: white;
     font-size: 35px;
+}
+
+.skillname {
+    display: inline;
+    margin-left: 5%;
 }
