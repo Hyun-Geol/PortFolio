@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HyunGeol ProtFolio</title>
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -94,6 +94,7 @@
                         <img src="public/images/ejs.PNG" class="iconimg" style="width:128px; height:57px;" alt="nodejs" ondragstart="return false">
                         <img src="public/images/express.PNG" class="iconimg" style="width:128px; height:57px;" alt="nodejs" ondragstart="return false"><br>
                         <h4 class="skillname">Library</h4>
+                        <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery" ondragstart="return false">
                         <img src="public/images/web3js.PNG" class="iconimg" alt="web3js" ondragstart="return false"><br>
                         <h4 class="skillname">DB</h4>
                         <img src="public/images/MySQL.png" class="iconimg" alt="MySql" ondragstart="return false">
@@ -104,22 +105,47 @@
                         <div class="container">
                             <br><br>
                             <h3 onselectstart="return false">PROJECT - 1<br>(EtherWallet)</h3><br>
-                            <a href="https://github.com/Hyun-Geol/ethereumWallet" target="_blank">
+                            <div class="container image">
                                 <img src="public/images/etherWallet.PNG" style="width:95%;" alt="ethwallet"
-                                    title="이미지를 클릭하시면 github페이지로 이동됩니다."
                                     style="margin-bottom: 0%; border: 1px solid black;" ondragstart="return false">
-                            </a>
-                            <p class="gulim">
+                                <button type="button" id="viewcodeWallet" class="btn btn-primary disabled">VIEW CODE</button>
+                                <button type="button" id="testWallet" class="btn btn-primary disabled" style="left: 65%">TEST</button>
+                            </div>
+                            <p class="gulim" align="left">
                                 <strong>개발기간</strong><br><br>
                                 2019.09.02 ~ 2019.11.05<br><br>
                                 <strong>맡은역할</strong><br><br>
-                                제가 맡은 역할은 이더리움 지갑을 만들기 위해 web3.js 라이브러리를 참조하여 계정생성을 할 때 PrivateKey,
-                                PublicKey를 만들어 DB에 저장하는 기능(Password는 bcrypt, PrivateKey는 Crypto로 암호화하여
-                                저장)을 만들었고, 이더전송하는 부분을 보다 안돼서 검색하여 TestNet과 MainNet은 web3의
-                                Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 PrivateKey로 서명하여 이더를 전송하는
-                                기능, 잔액을 조회하는 기능, 개인 키를 보여주는 기능, 로그인 부분 에러처리 및 다양한 에러 처리를
-                                하는 등 기능적인 부분을 개발하는 백엔드 역할을 맡았습니다. 그리고 프로젝트가 마무리될 때쯤 template으로
-                                작성되어있던 웹페이지를 ejs 템플릿 엔진 사용하여 코드를 정리하며 변환하는 작업을 하면서 프로젝트는 마무리되었습니다.<br><br>
+                                - 템플릿으로 작성되어있던 웹 페이지를 EJS로 변환 및 서버와 연동<br><br>
+                                - 기능적인 측면 구현<br>
+                                <b>1. 계정생성</b><br><br>
+                                계정생성시 DB에 ID, PASSWORD, Address, PrivateKey를 저장하는데, Web3.js의 <b>accounts.create을 사용하여
+                                Address, PrivateKey를 발급</b> 받고 정보들을 DB에 저장하기전에 <b>PASSWORD는 bcrypt의 AES를 사용하여 암호화, 
+                                PrivateKey는 CryptoJS를 사용하여 암호화</b> 해서 저장하는 기능을 구현하였습니다.<br><br>
+                                <!-- - PASSWORD 암호화에 bcrypt를 사용한 이유 : 사용자의 PASSWORD는 관리자가 알면 안되는 정보라는 점을 고려하여
+                                    단방향 암호해싱함수인 bcrypt를 사용해야겠다고 생각하였습니다.<br>
+                                - PrivateKey 암호화에 CryptoJS를 사용한 이유 : PrivateKey를 사용자에게 알려주기 위해서는 복호화가 가능한 
+                                암호 방식을 사용해야해서 사용하게되었습니다. 암호화 할 때 사용자가 입력한 PASSWORD secretKey가 되어서
+                                관리자가 마음대로 사용자의 개인키를 악용할 수 없도록 해놓았습니다.<br><br> -->
+
+                                <b>2. 로그인</b><br><br>
+                                DB에서 사용자가 입력한 ID를 바탕으로 정보를 조회한 뒤에 그에 맞는 암호화 되어 저장된 PASSWORD와 
+                                사용자가 입력한 PASSWORD를 bcrypt로 비교한 뒤에 리턴값이 참일 경우에 메인페이지로 이동되도록 구현 하였습니다.<br><br>
+
+                                <b>3. 잔액 조회</b><br><br>
+                                web3.js의 getBalance를 사용하여 잔액을 조회하는 기능을 구현하였습니다.<br><br>
+
+                                <b>4. 이더 전송</b><br><br>
+                                web3.js 공식문서를 보면서 이더전송하는 부분을 구현해보다 안돼서 검색해보다가 메인넷과 테스트넷은 web3의
+                                Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 <b>PrivateKey로 서명하여 이더를 전송하는
+                                sendSignedTransaction을 사용하여 이더를 전송</b>하는 기능을 구현하였습니다.<br><br>
+                                
+                                <b>5. 개인키 가져오기</b><br><br>
+                                개인키를 다른 지갑에서 사용해야할 경우도 생각하여 사용자가 개인키 가져오기를 하게되면 비밀번호를 입력했을 때
+                                성공하게 되면 Crypto로 암호화 되어있는 개인키를 복호화(복호화하기 위한 키는 사용자가 입력하는 PASSWORD)하여 보여주도록 구현하였습니다.<br><br>
+
+                                <strong>한계점</strong><br><br>
+                                클라이언트측에서 서버측으로 전송하는 데이터가 평문으로 전송 되기 때문에 스니핑에 대한 위협을 받을 수 있습니다. <br><br>
+
                                 <strong>느낀점</strong><br><br>
                                 처음으로 프로젝트를 진행하면서 어떻게 문제를 해결해야할지 막막했던적이 많았는데 처음에는 문제가 생기면
                                 해결하는데 많은 시간이 걸렸는데 시간이 갈수록 문제가 생겼을 때 구글에 검색하는 방식이나 문제 해결에 대한
@@ -140,20 +166,24 @@
                         <div class="container">
                             <br>
                             <h3 onselectstart="return false">PROJECT - 2<br>(Escan)</h3><br>
-                            <a href="https://github.com/pilsa0327/etherscan" target="_blank">
+                            <div class="container image">
                                 <img src="public/images/ethscan.PNG" style="width:95%;" alt="ethscan"
-                                    title="이미지를 클릭하시면 github페이지로 이동됩니다."
                                     style="margin-bottom: 0%; border: 1px solid black;" ondragstart="return false">
-                            </a>
-                            <p class="gulim"
+                                <button type="button" id="viewcodeScan" class="btn btn-primary disabled">VIEW CODE</button>
+                                <button type="button" id="testScan" class="btn btn-primary disabled" style="left: 65%">TEST</button>
+                            </div>
+                            <p class="gulim" align="left"
                                 style="background-color: white; padding: 1em; border: 2px solid white; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
                                 <strong>개발기간</strong><br><br>
                                 2019.09.19 ~ 2019.10.31<br><br>
                                 <strong>맡은역할</strong><br><br>
-                                Etherscan의 기능적인 부분을 만들어 보자는 의견이 나와 시작하게 된 프로젝트입니다.
                                 제가 맡은 역할은 블록 번호, 트랜잭션 해시, 어드레스를 검색 했을 때 검색한 결과에 맞는 정보가 나오도록
                                 기능을 만드는 작업, 만약에 존재하지 않는 값을 입력할 경우 그 값을 검사하는 web3.js의 함수를 사용하여
-                                검사한 후 없는 것을 검색했을 때 에러처리와 ejs 웹과 서버가 연결되도록 하는 작업을 하였습니다.
+                                검사한 후 없는 것을 검색했을 때 에러처리와 ejs 웹과 서버가 연결되도록 하는 작업을 하였습니다.<br><br>
+                                <strong>한계점</strong><br><br>
+                                1. 기존에있는 EtherScan과는 달리 DB에 정보를 저장하는 형태가 아니라 
+                                Web3.js 라이브러리에서 바로 정보를 조회하여 가져오기 때문에 속도가 느리고, 얻을 수 없는 정보가 있습니다.<br>
+                                2. URL을 통해 정보를 조회가 가능한데 존재하지 않는 정보를 조회를 할 경우 무한로딩 현상이 있습니다.(URL을 통해 정보 조회시 에러처리 불가)
                                 <br>
                                 <a href="https://github.com/pilsa0327/etherscan" target="_blank">
                                     <img src="public/images/github.png" class="iconimg" alt="github" title="이미지를 클릭하시면 github페이지로 이동됩니다.">
@@ -189,6 +219,18 @@
         crossorigin="anonymous"></script>
 
     <script>
+        $('#viewcodeWallet').click(function() {
+            window.open("https://github.com/Hyun-Geol/ethereumWallet")
+        })
+        $('#testWallet').click(function() {
+            window.open("http://175.125.21.32:3002")
+        })
+        $('#viewcodeScan').click(function() {
+            window.open("https://github.com/pilsa0327/etherscan")
+        })
+        $('#testScan').click(function() {
+            window.open("http://175.125.21.32:3000")
+        })
         /*
         $('#home').click(function () {
             $('#Home').removeClass('hide')

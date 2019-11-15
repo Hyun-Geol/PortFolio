@@ -7,7 +7,7 @@
     font-family: 'BMDOHYEON';
 }
 
-.gulim {
+.gulim{
     font-family: 굴림;
     font-size: 14px;
     font-weight: 600;
@@ -40,7 +40,7 @@
 }
 
 strong {
-    color: #302b63;
+    /* color: #302b63; */
     font-size: 20px;
 }
 
@@ -72,4 +72,27 @@ strong {
 .skillname {
     display: inline;
     margin-left: 5%;
+}
+
+.container .image {
+    position: relative;
+    padding: 0px;
+    height: auto;
+}
+
+.btn {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
