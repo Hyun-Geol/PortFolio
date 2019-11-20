@@ -7,7 +7,7 @@
     font-family: 'BMDOHYEON';
 }
 
-.gulim{
+.gulim {
     font-family: 굴림;
     font-size: 14px;
     font-weight: 600;
@@ -17,6 +17,15 @@
     border: 2px solid white;
     border-bottom-right-radius: 5px; 
     border-bottom-left-radius: 5px;
+}
+
+li {
+    font-family: 굴림;
+    margin-left: 5%;
+}
+
+.BM {
+    font-family: 'BMDOHYEON';
 }
 
 .iconimg{
@@ -81,6 +90,10 @@ strong {
 }
 
 .btn {
+    font-family: 'BMDOHYEON';
+}
+
+/* .btn {
     position: absolute;
     width: 25%;
     height: auto;
@@ -95,4 +108,4 @@ strong {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
+} */
