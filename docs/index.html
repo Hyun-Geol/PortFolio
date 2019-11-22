@@ -39,7 +39,7 @@
             <div class="col col-md col-lg col-xl" id="image-text">
                 <img src="public/images/Developer.jpg" style="width: 100%; height: 100%;" alt="Developer"
                     ondragstart="return false">
-                <p class="text" onselectstart="return false">Developer 조현걸의 포트폴리오 입니다.</p>
+                <p class="text" onselectstart="return false" style="font-size:38px;">Developer 조현걸의<br> 포트폴리오 입니다.</p>
             </div>
         </div>
     </div>
@@ -67,10 +67,10 @@
                         <br>
                         <strong>계기</strong>
                         <p class="gulim" align="left" style="margin:0% 5%; border-radius:5px;">
-                            중학생 때 피시방에 가면 있는 런처 프로그램을 보고 '집에서도 이렇게 만들어서
+                            &nbsp;중학생 때 피시방에 가면 있는 런처 프로그램을 보고 '집에서도 이렇게 만들어서
                             사용하면 편할 것 같다'라는 생각으로 어떻게 만드는지에에 대해 공부 하다 보니
                             자연스럽게 개발에 관해 관심이 생겨서 공부를 시작하게 되었습니다.<br>
-                            개발에 대한 공부를 하다가 혼자서 공부하기에는 한계가 있다는 것을 느꼈고,
+                            &nbsp;개발에 대한 공부를 하다가 혼자서 공부하기에는 한계가 있다는 것을 느꼈고,
                             과학기술정보통신부에서 주최하는 '블록체인 시스템 엔지니어 양성 과정'을
                             듣게 되면서 블록체인에 대한 이해도가 생겼고, 앞으로 개발 공부를 어떻게 진행해
                             나가야 할지에 대한 방향을 잡을 수 있게 되었습니다.
@@ -96,7 +96,8 @@
                         <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery" ondragstart="return false">
                         <img src="public/images/web3js.PNG" class="iconimg" alt="web3js" ondragstart="return false">
                         <img src="public/images/MySQL.png" class="iconimg" alt="MySql" ondragstart="return false">
-                        <img src="public/images/gcp.png" class="iconimg" alt="Google Cloud Platform" ondragstart="return false">
+                        <img src="public/images/gcp.png" class="iconimg" alt="Google Cloud Platform"
+                            ondragstart="return false">
                     </td>
                 </tr>
                 <tr id="Project1" style="background-color: #E4EAF2;">
@@ -115,10 +116,23 @@
                                 <strong>개발기간</strong><br><br>
                                 2019.09.02 ~ 2019.11.20<br><br>
 
+                                <strong>사용 기술</strong><br>
+                                <div class="projectimage">
+                                <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
+                                <img src="public/images/nodejs.png" class="iconimg" alt="nodejs"
+                                    ondragstart="return false">
+                                <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery"
+                                    ondragstart="return false">
+                                <img src="public/images/web3js.PNG" class="iconimg" alt="web3js"
+                                    ondragstart="return false">
+                                <img src="public/images/MySQL.png" class="iconimg" alt="MySql"
+                                    ondragstart="return false"><br><br>
+                                </div>
+
                                 <strong>맡은역할</strong><br><br>
-                                <b>- 기능적인 측면 구현</b><br><br>                        
-                                    <li>계정생성</li><br>
-                                    <!-- 계정생성시 DB에 ID, PASSWORD, Address, PrivateKey를 저장하는데, Web3.js의 <b>accounts.create을 사용하여
+                                <b>- 기능적인 측면 구현</b><br><br>
+                                <li>계정생성</li><br>
+                                <!-- 계정생성시 DB에 ID, PASSWORD, Address, PrivateKey를 저장하는데, Web3.js의 <b>accounts.create을 사용하여
                                                                     Address, PrivateKey를 발급</b> 받고 정보들을 DB에 저장하기전에 <b>PASSWORD는 bcrypt의 AES를 사용하여 암호화,
                                                                         PrivateKey는 CryptoJS를 사용하여 암호화</b> 해서 저장하는 기능을 구현하였습니다.<br><br>
                                                                         - PASSWORD 암호화에 bcrypt를 사용한 이유 : 사용자의 PASSWORD는 관리자가 알면 안되는 정보라는 점을 고려하여
@@ -126,36 +140,41 @@
                                                                         - PrivateKey 암호화에 CryptoJS를 사용한 이유 : PrivateKey를 사용자에게 알려주기 위해서는 복호화가 가능한 
                                                                         암호 방식을 사용해야해서 사용하게되었습니다. 암호화 할 때 사용자가 입력한 PASSWORD secretKey가 되어서
                                                                         관리자가 마음대로 사용자의 개인키를 악용할 수 없도록 해놓았습니다.<br><br> -->
-                                    <li>로그인</li><br>
-                                    <!-- DB에서 사용자가 입력한 ID를 바탕으로 정보를 조회한 뒤에 그에 맞는 암호화 되어 저장된 PASSWORD와
+                                <li>로그인</li><br>
+                                <!-- DB에서 사용자가 입력한 ID를 바탕으로 정보를 조회한 뒤에 그에 맞는 암호화 되어 저장된 PASSWORD와
                                                                             사용자가 입력한 PASSWORD를 bcrypt로 비교한 뒤에 리턴값이 참일 경우에 메인페이지로 이동되도록 구현 하였습니다.<br><br> -->
-                                    <li>잔액 조회</li><br>
-                                    <!-- web3.js의 getBalance를 사용하여 잔액을 조회하는 기능을 구현하였습니다.<br><br> -->
-                                    <li>이더 전송</li><br>
-                                    <!-- web3.js 공식문서를 보면서 이더전송하는 부분을 구현해보다 안돼서 검색해보다가 메인넷과 테스트넷은 web3의
+                                <li>잔액 조회</li><br>
+                                <!-- web3.js의 getBalance를 사용하여 잔액을 조회하는 기능을 구현하였습니다.<br><br> -->
+                                <li>이더 전송</li><br>
+                                <!-- web3.js 공식문서를 보면서 이더전송하는 부분을 구현해보다 안돼서 검색해보다가 메인넷과 테스트넷은 web3의
                                                                                 Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 <b>PrivateKey로 서명하여 이더를 전송하는
                                                                                     sendSignedTransaction을 사용하여 이더를 전송</b>하는 기능을 구현하였습니다.<br><br> -->
-                                    <li>개인키 가져오기</li><br><br>
-                                    <!-- 개인키를 다른 지갑에서 사용해야할 경우도 생각하여 사용자가 개인키 가져오기를 하게되면 비밀번호를 입력했을 때
+                                <li>개인키 가져오기</li><br>
+                                <li>서버 변경 기능(테스트넷, 메인넷)구현</li><br>
+                                <!-- 개인키를 다른 지갑에서 사용해야할 경우도 생각하여 사용자가 개인키 가져오기를 하게되면 비밀번호를 입력했을 때
                                                                                         성공하게 되면 Crypto로 암호화 되어있는 개인키를 복호화(복호화하기 위한 키는 사용자가 입력하는 PASSWORD)하여 보여주도록
                                                                                         구현하였습니다.<br><br> -->
                                 <b>- 템플릿으로 작성되어있던 웹 페이지를 EJS로 변환 및 서버와 연동</b><br><br>
 
                                 <strong>한계점</strong><br><br>
-                                <li>개인키를 암호화해서 DB에 저장하는데 이때 복호화키가 사용자가 입력한 password이기 때문에 사용자가 password를 분실시
+                                <li>개인키를 암호화해서 DB에 저장하는데 이때 복호화키가 사용자가 입력한 Password이기 때문에 사용자가 Password를 분실시
                                     개인키 복호화가 불가능합니다.(개인키 분산저장에 대한 이해도 부족)</li><br>
-                                <li>클라이언트측에서 서버측으로 전송하는 데이터가 평문으로 전송 되기 때문에 스니핑에 대한 위협을 받을 수 있습니다.</li><br><br>
+                                <li>클라이언트측에서 서버측으로 전송하는 데이터가 평문으로 전송 되기 때문에 스니핑에 대한 위협을 받을 수 있습니다.</li><br>
+                                <li>History 부분에 나타나는 txHash값은 오로지 이 지갑에서 이더를 전송했을 때만 저장되고 보여지기 때문에 
+                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)</li><br>
+                                <br>
 
                                 <strong>느낀점</strong><br><br>
-                                처음으로 프로젝트를 진행하면서 어떻게 문제를 해결해야할지 막막했던적이 많았는데 처음에는 문제가 생기면
+                                &nbsp;처음으로 프로젝트를 진행하면서 어떻게 문제를 해결해야할지 막막했던적이 많았는데 처음에는 문제가 생기면
                                 해결하는데 많은 시간이 걸렸는데 시간이 갈수록 문제가 생겼을 때 공식문서를 보는법, 구글에 검색하는 방식 등 문제 해결에 대한
                                 숙련도가 생기면서 문제가 발생했을 때 어떻게 하면 해결이 될지 아는데 점점 더 적은 시간이 들게 되었습니다.<br>
-                                문제가 생길 때마다 정말 힘들었지만 팀원들과 문제에 대한 의견을 주고받으며 해결책을 찾기도 하였습니다.
-                                그리고 문제를 하나하나 해결하거나 원하는 기능이 구현되었을 때 그 성취감은 말로 이루 표현할 수 없었던 것 같습니다.
+                                &nbsp;문제가 생길 때마다 정말 힘들었지만 혼자서만 해결하려고 하는 것이 아닌 팀원들과 문제에 대한 의견을 주고받으며 해결책을 찾기도 하였습니다.<br>
+                                &nbsp;문제를 하나하나 해결하거나 원하는 기능이 구현되었을 때 그 성취감은 말로 이루 표현할 수 없었던 것 같습니다.
                                 앞으로도 전 그 성취감을 위해 개발 공부를 계속할 것입니다.
                                 <br><br>
                                 <a href="https://github.com/Hyun-Geol/ethereumWallet" target="_blank">
-                                    <img src="public/images/github.png" class="iconimg" style="width: 57px; height: 57px;" alt="github"
+                                    <img src="public/images/github.png" class="iconimg"
+                                        style="width: 57px; height: 57px;" alt="github"
                                         title="이미지를 클릭하시면 github페이지로 이동됩니다.">
                                 </a><br>
                             </ul>
@@ -177,18 +196,29 @@
                                     class="btn btn-primary disabled">TEST</button><br><br>
                                 <strong>개발기간</strong><br><br>
                                 2019.09.19 ~ 2019.11.20<br><br>
+                                <strong>사용 기술</strong><br>
+                                <div class="projectimage">
+                                <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
+                                <img src="public/images/nodejs.png" class="iconimg" alt="nodejs"
+                                    ondragstart="return false">
+                                <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery"
+                                    ondragstart="return false">
+                                <img src="public/images/web3js.PNG" class="iconimg" alt="web3js"
+                                    ondragstart="return false">
+                                </div>
                                 <strong>맡은역할</strong><br><br>
                                 <li>블록 번호, 트랜잭션 해시, 어드레스를 검색 기능 구현</li><br>
                                 <li>검색에 대한 에러처리</li><br>
-                                <li>EJS와 서버를 연동(express)</li><br><br>
+                                <li>EJS와 서버를 연동(express)</li><br>
+                                <li>서버 변경 기능(테스트넷, 메인넷)구현</li><br><br>
                                 <!-- 제가 맡은 역할은 블록 번호, 트랜잭션 해시, 어드레스를 검색 했을 때 검색한 결과에 맞는 정보가 나오도록
                                 기능을 만드는 작업, 만약에 존재하지 않는 값을 입력할 경우 그 값을 검사하는 web3.js의 함수를 사용하여
                                 검사한 후 없는 것을 검색했을 때 에러처리와 ejs 웹과 서버가 연결되도록 하는 작업을 하였습니다.<br><br> -->
                                 <strong>한계점</strong><br><br>
-                                <li>Web3.js 라이브러리에서 바로 정보를 조회하여 가져오기 때문에 속도가 느리고, 얻을 수 없는 정보가 있습니다.</li><br>
-                                <li>서버 변경하는 기능을 구현하지 못하였습니다.</li><br><br>
+                                <li>Web3.js 라이브러리에서 바로 정보를 조회하여 가져오기 때문에 속도가 느리고, 얻을 수 없는 정보가 있습니다.</li><br><br>
                                 <a href="https://github.com/pilsa0327/etherscan" target="_blank">
-                                    <img src="public/images/github.png" class="iconimg" style="width: 57px; height: 57px;" alt="github"
+                                    <img src="public/images/github.png" class="iconimg"
+                                        style="width: 57px; height: 57px;" alt="github"
                                         title="이미지를 클릭하시면 github페이지로 이동됩니다.">
                                 </a><br>
                             </ul>

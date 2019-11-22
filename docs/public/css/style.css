@@ -27,6 +27,10 @@ li {
 .BM {
     font-family: 'BMDOHYEON';
 }
+.projectimage img {
+    width: 57px;
+    height: 57px;
+}
 
 .iconimg{
     width: 72px;
