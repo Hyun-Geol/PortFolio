@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HyunGeol ProtFolio</title>
+    <title>HyunGeol PortFolio</title>
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,6 +25,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="#Profile" id="profile">PROFILE</a>
                     <a class="nav-link" href="#About" id="about">ABOUT ME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#Education" id="education">EDUCATION</a>
                     <a class="nav-link" href="#Skills" id="skills">SKILLS</a>
                     <a class="nav-link" href="#Project1" id="project1">PROJECT-1</a>
                     <a class="nav-link" href="#Project2" id="project2">PROJECT-2</a>
@@ -83,14 +84,34 @@
                         </p><br>
                     </td>
                 </tr>
-                <tr id="Skills" style="background-color: #B4C4D9;">
+                <tr id="Education" style="background-color: #B4C4D9;">
+                    <td class="padding-td">
+                        <br><br>
+                        <h3 onselectstart="return false" align="center">Education</h3><br>
+                        <img src="./public/images/blockchain.png" ondragstart="return false" class="center" alt="블록체인 시스템 엔지니어 양성과정"><br>
+                        <ul>
+                            <li class="BM">교육명 : 블록체인 시스템 엔지니어 양성과정</li><br>
+                            <li class="BM">주최 및 교육기관 : 과학기술정부통신부, 정보통신기획평가원, fn이노에듀</li><br>
+                            <li class="BM">교육기간 : 2019.06.03~2019.11.26</li><br>
+                            <li class="BM">교육내용</li><br>
+                            <ul>
+                                <li class="BM">블록체인 이론 수업</li><br>
+                                <li class="BM">JAVA, JavaScript, Node.js, HTML5, MySQL, Docker, Git, Ubuntu</li><br>
+                                <li class="BM">Ethereum : Geth, Parity를 이용한 노드운영방법 및 Ethereum 정보를 조회, Solidty로 스마트 컨트랙트 배포</li><br>
+                                <li class="BM">EOS : Hexlant에서 제공하는 EOS CLI HELPER를 사용한 EOS 정보조회, EOSJS를 이용한 간단한 지갑 dApp 개발</li><br>
+                                <li class="BM">기업 연계 프로젝트 : 각 팀별로 원하는 프로젝트를 진행한 뒤에 부족한 부분을 기업에서 오신 멘토님들에게 도움음 받았습니다.</li>
+                            </ul>
+                        </ul>
+                    </td>
+                </tr>
+                <tr id="Skills" style="background-color: #E4EAF2;">
                     <td class="padding-td" align="center">
                         <br><br>
-                        <h3 onselectstart="return false" align="center">SKILLS</h3><br>
+                        <h3 onselectstart="return false">SKILLS</h3><br>
                         <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
                         <img src="public/images/HTML5.png" class="iconimg" alt="HTML5" ondragstart="return false">
                         <img src="public/images/nodejs.png" class="iconimg" alt="nodejs" ondragstart="return false">
-                        <img src="public/images/ejs.PNG" class="iconimg" style="width:128px;" alt="nodejs">
+                        <img src="public/images/ejs.PNG" class="iconimg" style="width:128px;" alt="nodejs" ondragstart="return false">
                         <!-- <img src="public/images/express.PNG" class="iconimg" style="width:128px;"
                             alt="nodejs" ondragstart="return false"> -->
                         <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery" ondragstart="return false">
@@ -100,7 +121,7 @@
                             ondragstart="return false">
                     </td>
                 </tr>
-                <tr id="Project1" style="background-color: #E4EAF2;">
+                <tr id="Project1" style="background-color: #6C7D8C;">
                     <td class="padding-td" align="center">
                         <div class="container">
                             <br><br>
@@ -118,15 +139,15 @@
 
                                 <strong>사용 기술</strong><br>
                                 <div class="projectimage">
-                                <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
-                                <img src="public/images/nodejs.png" class="iconimg" alt="nodejs"
-                                    ondragstart="return false">
-                                <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery"
-                                    ondragstart="return false">
-                                <img src="public/images/web3js.PNG" class="iconimg" alt="web3js"
-                                    ondragstart="return false">
-                                <img src="public/images/MySQL.png" class="iconimg" alt="MySql"
-                                    ondragstart="return false"><br><br>
+                                    <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
+                                    <img src="public/images/nodejs.png" class="iconimg" alt="nodejs"
+                                        ondragstart="return false">
+                                    <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery"
+                                        ondragstart="return false">
+                                    <img src="public/images/web3js.PNG" class="iconimg" alt="web3js"
+                                        ondragstart="return false">
+                                    <img src="public/images/MySQL.png" class="iconimg" alt="MySql"
+                                        ondragstart="return false"><br><br>
                                 </div>
 
                                 <strong>맡은역할</strong><br><br>
@@ -160,8 +181,9 @@
                                 <li>개인키를 암호화해서 DB에 저장하는데 이때 복호화키가 사용자가 입력한 Password이기 때문에 사용자가 Password를 분실시
                                     개인키 복호화가 불가능합니다.(개인키 분산저장에 대한 이해도 부족)</li><br>
                                 <li>클라이언트측에서 서버측으로 전송하는 데이터가 평문으로 전송 되기 때문에 스니핑에 대한 위협을 받을 수 있습니다.</li><br>
-                                <li>History 부분에 나타나는 txHash값은 오로지 이 지갑에서 이더를 전송했을 때만 저장되고 보여지기 때문에 
-                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)</li><br>
+                                <li>History 부분에 나타나는 txHash값은 오로지 이 지갑에서 이더를 전송했을 때만 저장되고 보여지기 때문에
+                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)
+                                </li><br>
                                 <br>
 
                                 <strong>느낀점</strong><br><br>
@@ -181,7 +203,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr id="Project2" style="background-color: #E4EAF2;">
+                <tr id="Project2" style="background-color: #6C7D8C;">
                     <td class="padding-td" align="center"><br><br>
                         <div class="container">
                             <br>
@@ -198,13 +220,13 @@
                                 2019.09.19 ~ 2019.11.20<br><br>
                                 <strong>사용 기술</strong><br>
                                 <div class="projectimage">
-                                <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
-                                <img src="public/images/nodejs.png" class="iconimg" alt="nodejs"
-                                    ondragstart="return false">
-                                <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery"
-                                    ondragstart="return false">
-                                <img src="public/images/web3js.PNG" class="iconimg" alt="web3js"
-                                    ondragstart="return false">
+                                    <img src="public/images/js.png" class="iconimg" alt="js" ondragstart="return false">
+                                    <img src="public/images/nodejs.png" class="iconimg" alt="nodejs"
+                                        ondragstart="return false">
+                                    <img src="public/images/jQuery.gif" class="iconimg" alt="jQuery"
+                                        ondragstart="return false">
+                                    <img src="public/images/web3js.PNG" class="iconimg" alt="web3js"
+                                        ondragstart="return false">
                                 </div>
                                 <strong>맡은역할</strong><br><br>
                                 <li>블록 번호, 트랜잭션 해시, 어드레스를 검색 기능 구현</li><br>
@@ -225,7 +247,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr id="HomePage" style="background-color: #6C7D8C;">
+                <tr id="HomePage">
                     <td class="padding-td" align="center">
                         <div class="container">
                             <br><br>

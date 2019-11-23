@@ -18,6 +18,12 @@
     border-bottom-right-radius: 5px; 
     border-bottom-left-radius: 5px;
 }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 li {
     font-family: 굴림;
