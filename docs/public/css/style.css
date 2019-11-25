@@ -2,13 +2,19 @@
     font-family: 'BMDOHYEON';
     src: url('../fonts/BMDOHYEON.ttf') format('truetype');
 }
+@font-face { font-family: 'NanumGothic';
+    src: url('../fonts/NanumBarunGothic.ttf');
+    src: url('../fonts/NanumBarunGothic.ttf') format('embedded-opentype'),
+    url('../fonts/NanumBarunGothic.ttf') format('woff');
+}
+    
 
 * {
     font-family: 'BMDOHYEON';
 }
 
-.gulim {
-    font-family: 굴림;
+.font {
+    font-family: 'NanumGothic';
     font-size: 14px;
     font-weight: 600;
     margin: 0% 2.5%;
@@ -26,7 +32,7 @@
 }
 
 li {
-    font-family: 굴림;
+    font-family: 'NanumGothic';
     margin-left: 5%;
 }
 
