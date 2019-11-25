@@ -186,10 +186,12 @@
                                                                                 Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 <b>PrivateKey로 서명하여 이더를 전송하는
                                                                                     sendSignedTransaction을 사용하여 이더를 전송</b>하는 기능을 구현하였습니다.<br><br> -->
                                 <li>개인키 가져오기</li><br>
-                                <li>서버 변경 기능(테스트넷, 메인넷)구현</li><br>
                                 <!-- 개인키를 다른 지갑에서 사용해야할 경우도 생각하여 사용자가 개인키 가져오기를 하게되면 비밀번호를 입력했을 때
                                                                                         성공하게 되면 Crypto로 암호화 되어있는 개인키를 복호화(복호화하기 위한 키는 사용자가 입력하는 PASSWORD)하여 보여주도록
                                                                                         구현하였습니다.<br><br> -->
+                                <li>서버 변경 기능(테스트넷, 메인넷)구현</li><br>
+                                <li>서버 변경시 txHash값도 서버에 맞게 불러오는 기능 구현</li>
+                                
                                 <b>- 템플릿으로 작성되어있던 웹 페이지를 EJS로 변환 및 서버와 연동</b><br><br>
 
                                 <strong>한계점</strong><br><br>
@@ -197,8 +199,7 @@
                                     개인키 복호화가 불가능합니다.(개인키 분산저장에 대한 이해도 부족)</li><br>
                                 <li>클라이언트측에서 서버측으로 전송하는 데이터가 평문으로 전송 되기 때문에 스니핑에 대한 위협을 받을 수 있습니다.</li><br>
                                 <li>History 부분에 나타나는 txHash값은 오로지 이 지갑에서 이더를 전송했을 때만 저장되고 보여지기 때문에
-                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)
-                                </li>
+                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)</li>
                                 <a href="https://github.com/Hyun-Geol/ethereumWallet" target="_blank">
                                     <img src="public/images/github.png" class="iconimg"
                                         style="width: 57px; height: 57px;" alt="github"
