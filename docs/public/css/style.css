@@ -31,6 +31,10 @@
     width: 50%;
 }
 
+.modal-content {
+    padding: 15px;
+}
+
 li {
     font-family: 'NanumGothic';
     margin-left: 5%;

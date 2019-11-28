@@ -89,9 +89,10 @@
                         <div class="container">
                             <br><br>
                             <h3 onselectstart="return false" align="center">Education</h3><br>
-                            <img src="./public/images/blockchain.png" ondragstart="return false" class="center"
-                                alt="블록체인 시스템 엔지니어 양성과정"><br>
                             <ul style="background: white; width:95%; margin:0% 2.5%; border-radius:5px; "><br>
+                                <img src="./public/images/blockchain.png" ondragstart="return false" class="center"
+                                    alt="블록체인 시스템 엔지니어 양성과정"
+                                    style="margin-bottom: 0%; box-shadow: 0px 0px 5px 5px grey;"><br>
                                 <li class="BM">교육명 : 블록체인 시스템 엔지니어 양성과정</li><br>
                                 <li class="BM">주최 및 교육기관 : 과학기술정부통신부, 정보통신기획평가원, fn이노에듀</li><br>
                                 <li class="BM">교육기간 : 2019.06.03~2019.11.26</li><br>
@@ -166,32 +167,120 @@
 
                                 <strong>맡은역할</strong><br><br>
                                 <b>- 기능적인 측면 구현</b><br><br>
-                                <li>계정생성</li><br>
+                                <li>계정생성<button type="button" class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".signup">상세정보</button></li><br>
+                                <div class="modal fade signup" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            계정생성시 DB에 사용자의 ID, PASSWORD, Address, PrivateKey를 저장하는데, Web3.js의 <strong
+                                                style="font-size:15px; color: rgb(91, 91, 248);">accounts.create을 사용하여
+                                                Address, PrivateKey를 발급</strong> 받고 정보들을 DB에 저장하기전에 <strong
+                                                style="font-size:15px; color: rgb(91, 91, 248);">비밀번호는 bcrypt의 AES를 사용하여
+                                                암호화,
+                                                개인키는 CryptoJS를 사용하여 암호화</strong> 해서 저장하는 기능을 구현했습니다.<br><br>
+                                            - PASSWORD 암호화에 bcrypt를 사용한 이유 : 사용자의 PASSWORD는 <strong
+                                                style="font-size:15px; color: rgb(91, 91, 248);">관리자가 알면 안되는 정보라는 점을
+                                                고려하여
+                                                <strong style="font-size:15px; color: rgb(231, 85, 85);">단방향 암호해싱함수인
+                                                    bcrypt</strong>를 사용해야겠다고 생각하였습니다.</strong><br>
+                                            - PrivateKey 암호화에 CryptoJS를 사용한 이유 : PrivateKey를 사용자에게 알려주기 위해서는 복호화가 가능한
+                                            암호 방식을 사용해야해서 사용하게되었습니다. 암호화 할 때 <strong
+                                                style="font-size:15px; color: rgb(91, 91, 248);">사용자가 입력한 PASSWORD
+                                                secretKey가 되어서
+                                                관리자가 마음대로 사용자의 개인키를 악용할 수 없도록 해놓았습니다.</strong>
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 <li>아이디 / 비밀번호 정규식 추가</li><br>
-                                <!-- 계정생성시 DB에 ID, PASSWORD, Address, PrivateKey를 저장하는데, Web3.js의 <b>accounts.create을 사용하여
-                                                                    Address, PrivateKey를 발급</b> 받고 정보들을 DB에 저장하기전에 <b>PASSWORD는 bcrypt의 AES를 사용하여 암호화,
-                                                                        PrivateKey는 CryptoJS를 사용하여 암호화</b> 해서 저장하는 기능을 구현하였습니다.<br><br>
-                                                                        - PASSWORD 암호화에 bcrypt를 사용한 이유 : 사용자의 PASSWORD는 관리자가 알면 안되는 정보라는 점을 고려하여
-                                                                        단방향 암호해싱함수인 bcrypt를 사용해야겠다고 생각하였습니다.<br>
-                                                                        - PrivateKey 암호화에 CryptoJS를 사용한 이유 : PrivateKey를 사용자에게 알려주기 위해서는 복호화가 가능한 
-                                                                        암호 방식을 사용해야해서 사용하게되었습니다. 암호화 할 때 사용자가 입력한 PASSWORD secretKey가 되어서
-                                                                        관리자가 마음대로 사용자의 개인키를 악용할 수 없도록 해놓았습니다.<br><br> -->
-                                <li>로그인</li><br>
-                                <!-- DB에서 사용자가 입력한 ID를 바탕으로 정보를 조회한 뒤에 그에 맞는 암호화 되어 저장된 PASSWORD와
-                                                                            사용자가 입력한 PASSWORD를 bcrypt로 비교한 뒤에 리턴값이 참일 경우에 메인페이지로 이동되도록 구현 하였습니다.<br><br> -->
-                                <li>잔액 조회</li><br>
-                                <!-- web3.js의 getBalance를 사용하여 잔액을 조회하는 기능을 구현하였습니다.<br><br> -->
-                                <li>이더 전송</li><br>
-                                <!-- web3.js 공식문서를 보면서 이더전송하는 부분을 구현해보다 안돼서 검색해보다가 메인넷과 테스트넷은 web3의
-                                                                                Personal 옵션이 막혀있다는 사실을 알게되었고, 그래서 <b>PrivateKey로 서명하여 이더를 전송하는
-                                                                                    sendSignedTransaction을 사용하여 이더를 전송</b>하는 기능을 구현하였습니다.<br><br> -->
-                                <li>개인키 가져오기</li><br>
-                                <!-- 개인키를 다른 지갑에서 사용해야할 경우도 생각하여 사용자가 개인키 가져오기를 하게되면 비밀번호를 입력했을 때
-                                                                                        성공하게 되면 Crypto로 암호화 되어있는 개인키를 복호화(복호화하기 위한 키는 사용자가 입력하는 PASSWORD)하여 보여주도록
-                                                                                        구현하였습니다.<br><br> -->
-                                <li>서버 변경 기능(테스트넷, 메인넷)구현</li><br>
-                                <li>서버 변경시 txHash값도 서버에 맞게 불러오는 기능 구현</li>
-                                
+                                <li>로그인<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".login">상세정보</button></li><br>
+                                <div class="modal fade login" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            DB에서 사용자가 입력한 ID를 조회한 뒤에 사용자가 입력한 비밀번호와 DB에 암호화 되어 저장된 비밀번호를 bcrypt의 내장함수로
+                                            비교한 뒤 일치한다면
+                                            Session에 is_logined(로그인 상태인지 구별), ID, Address, PW(암호화 된), PrivateKey(암호화 된)를
+                                            저장한 뒤에 메인페이지로 이동되도록 구현 하였습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>잔액 조회<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".balance">상세정보</button></li><br>
+                                <div class="modal fade balance" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            web3js의 getBalance를 이용하여 잔액을 조회했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- web3.js의 getBalance를 사용하여 잔액을 조회하는 기능을 구현했습니다.<br><br> -->
+                                <li>이더 전송<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".send">상세정보</button></li><br>
+                                <div class="modal fade send" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            web3.js 공식문서를 보면서 이더 전송 기능을 구현하다가 테스트넷과 메인넷에서는 web3.js의 personal옵션이 막혀있다는
+                                            사실을 알게되어서
+                                            <strong style="font-size:15px; color: rgb(91, 91, 248);">개인키로 서명하여 이더를 전송하는
+                                                <strong
+                                                    style="font-size:15px; color: rgb(231, 85, 85);">sendSingedTransaction</strong>을
+                                                사용하여 이더를 전송</strong>하는 기능을 구현했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>개인키 보는 기능<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".getPK">상세정보</button></li><br>
+                                <div class="modal fade getPK" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            CryptoJs로 암호화되어 있는 PrivateKey의 복호화키는 사용자가 입력한 Password이기 때문에
+                                            로그인에서와 같이 bcrypt로 비밀번호를 비교해준 뒤에 일치하면 복호화하여 개인키를 보여주도록 기능을 구현했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>서버 변경 기능(테스트넷, 메인넷)구현<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".server">상세정보</button></li><br>
+                                <div class="modal fade server" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            서버 변경 버튼을 누르게되면 그에 맞는 서버 인프라키를 세션에 저장시켜 web3js의 기능을
+                                            실행 시키기 전에 만약 서버 세션값이 있다면 그에 맞는 서버 정보로 기능이 실행되도록 구현했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>서버 변경시 txHash값도 서버에 맞게 불러오는 기능 구현<button class="btn btn-link btn-sm"
+                                        data-toggle="modal" data-target=".txHash">상세정보</button></li>
+                                <div class="modal fade txHash" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            txHash값을 DB에 저장할 때 userid, network(현재 서버), txHash값을 저장시키고,
+                                            메인페이지로 이동시 MySQL의 WHERE문과 AND연산자를 이용하여 userid, network가
+                                            현재 서버정보와 일치하는 정보가 조회되도록 기능을 구현했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div><br>
+
                                 <b>- 템플릿으로 작성되어있던 웹 페이지를 EJS로 변환 및 서버와 연동</b><br><br>
 
                                 <strong>한계점</strong><br><br>
@@ -199,7 +288,8 @@
                                     개인키 복호화가 불가능합니다.(개인키 분산저장에 대한 이해도 부족)</li><br>
                                 <li>클라이언트측에서 서버측으로 전송하는 데이터가 평문으로 전송 되기 때문에 스니핑에 대한 위협을 받을 수 있습니다.</li><br>
                                 <li>History 부분에 나타나는 txHash값은 오로지 이 지갑에서 이더를 전송했을 때만 저장되고 보여지기 때문에
-                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)</li>
+                                    외부에서 사용자의 Address로 전송한 txHash값은 볼 수 없습니다.<br>(Output Data 조회 가능, Input Data 조회 불가)
+                                </li>
                                 <a href="https://github.com/Hyun-Geol/ethereumWallet" target="_blank">
                                     <img src="public/images/github.png" class="iconimg"
                                         style="width: 57px; height: 57px;" alt="github"
@@ -238,13 +328,62 @@
                                         ondragstart="return false">
                                 </div>
                                 <strong>맡은역할</strong><br><br>
-                                <li>블록 번호, 트랜잭션 해시, 어드레스를 검색 기능 구현</li><br>
-                                <li>검색에 대한 에러처리</li><br>
+                                <li>블록 번호, 트랜잭션 해시, 어드레스를 검색 기능 구현<button class="btn btn-link btn-sm"
+                                        data-toggle="modal" data-target=".search">상세정보</button></li><br>
+                                <div class="modal fade search" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <h6>블록 정보</h6>
+                                            getBlock을 이용하여 블록에 포함된 트랜잭션 수, 마이너, 블록보상 등을 보여주도록 구현했습니다.
+                                            (블록보상은 직접 계산했기 때문에 부정확 할 수 있습니다.(시간에 따라 static block reward가 바뀌었기 때문))
+                                            <h6>트랜잭션 정보</h6>
+                                            getTransaction, getTransactionReceipt 함수를 이용해서 트랜잭션 정보를 조회하였습니다.
+                                            <h6>어드레스 정보</h6>
+                                            getBalance를 이용해 잔액을 조회하는 기능입니다.<br>
+                                            원래는 etherScan처럼 Input Hash, Output hash, self등 사용자 Address에 포함된 모든 해시값을 보여주고 싶었으나,
+                                            모든 서버의 정보를 다 저장하기에는 서버의 사양이 부족했기 때문에 구현하지 못하였습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>Pendding중인 txHash 조회 기능<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".pendding"></button></li>
+                                <div class="modal fade pendding" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            만약 아직 펜딩 중이라면 펜딩이 안되어도 제공되는 정보는 그대로 클라이언트 측으로 전송, 
+                                            펜딩중인 정보는 Pennding이라는 문구로 클라이언트 측으로 전송하여 펜딩처리를 구현했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>검색에 대한 에러처리<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".error">상세정보</button></li><br>
+                                <div class="modal fade error" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <h6>기본적인 검색</h6>
+                                            입력한 값의 길이가 Address, txHash, block(마지막블록)의 길이보다 길거나 짧으면 에러페이지로 이동되도록 구현했습니다.
+                                            <h6>Address 에러처리</h6>
+                                            isAddress 함수를 사용하여 존재하는 Address만 조회 되도록 구현했습니다.
+                                            <h6>txHash 에러처리</h6>
+                                            transaction정보를 가져오다가 에러가 나면 에러페이지로 이동되도록 구현했습니다.
+                                            <h6>Block 에러처리</h6>
+                                            getBlockNumber 함수를 사용해 현재까지 채굴된 마지막 블록이 몇번째 블록인지 조회한 다음 만약 입력한 값이 
+                                            마지막 블록보다 크면 에러처리가 되도록 구현했습니다.
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                data-dismiss="modal">close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <li>서버 변경 기능(테스트넷, 메인넷)구현<button class="btn btn-link btn-sm" data-toggle="modal"
+                                        data-target=".server">상세정보</button></li><br>
                                 <li>EJS와 서버를 연동(express)</li><br>
-                                <li>서버 변경 기능(테스트넷, 메인넷)구현</li><br><br>
-                                <!-- 제가 맡은 역할은 블록 번호, 트랜잭션 해시, 어드레스를 검색 했을 때 검색한 결과에 맞는 정보가 나오도록
-                                기능을 만드는 작업, 만약에 존재하지 않는 값을 입력할 경우 그 값을 검사하는 web3.js의 함수를 사용하여
-                                검사한 후 없는 것을 검색했을 때 에러처리와 ejs 웹과 서버가 연결되도록 하는 작업을 하였습니다.<br><br> -->
                                 <strong>한계점</strong><br><br>
                                 <li>Web3.js 라이브러리에서 바로 정보를 조회하여 가져오기 때문에 속도가 느리고, 얻을 수 없는 정보가 있습니다.</li>
                                 <a href="https://github.com/pilsa0327/etherscan" target="_blank">
